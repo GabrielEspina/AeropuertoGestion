@@ -8,11 +8,11 @@ import java.util.Map;
 import ar.edu.ub.p3.modelo.*;
 
 
-public class EstadoAeropuerto implements IRepositorioModelo < Aeropuerto >{
+public class EstadoVuelo implements IRepositorioModelo < Aeropuerto >{
 
 	private Map <String,Aeropuerto> aeropuertos;
 
-	public EstadoAeropuerto() {
+	public EstadoVuelo() {
 		
 		setAeropuertos( new HashMap< String , Aeropuerto >() );
 		

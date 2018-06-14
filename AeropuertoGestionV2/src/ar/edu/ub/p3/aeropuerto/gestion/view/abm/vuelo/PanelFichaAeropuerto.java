@@ -1,4 +1,4 @@
-package ar.edu.ub.p3.aeropuerto.gestion.view.abm.aeropuerto;
+package ar.edu.ub.p3.aeropuerto.gestion.view.abm.vuelo;
 
 
 import java.awt.BorderLayout;

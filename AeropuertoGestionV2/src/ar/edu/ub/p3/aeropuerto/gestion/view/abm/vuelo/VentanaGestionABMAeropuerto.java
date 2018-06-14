@@ -1,4 +1,4 @@
-package ar.edu.ub.p3.aeropuerto.gestion.view.abm.aeropuerto;
+package ar.edu.ub.p3.aeropuerto.gestion.view.abm.vuelo;
 
 import java.awt.GridLayout;
 
@@ -20,7 +20,6 @@ public class VentanaGestionABMAeropuerto extends JFrame{
 		setSize(800, 320); 
 		setVisible(true);
 		
-		ficha.getPanelBotones().setVentanaPrincipal(this);
 	}
 	
 

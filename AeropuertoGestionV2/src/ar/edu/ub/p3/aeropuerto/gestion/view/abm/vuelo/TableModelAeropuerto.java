@@ -1,4 +1,4 @@
-package ar.edu.ub.p3.aeropuerto.gestion.view.abm.aeropuerto;
+package ar.edu.ub.p3.aeropuerto.gestion.view.abm.vuelo;
 
 
 import java.util.List;
@@ -25,9 +25,7 @@ public final class TableModelAeropuerto extends DefaultTableModel {
 			case 0:
 				return "idAeropuerto";
 			case 1:
-				return "Nombre";	
-			case 2:
-				return "Posicion";
+				return "Nombre";				
 			default:
 				break;
 			}
@@ -37,7 +35,7 @@ public final class TableModelAeropuerto extends DefaultTableModel {
 		@Override
 		public int getColumnCount() {
 			//TODO valor clavado con la cantidad de columnas a mostrar
-			return 3;
+			return 2;
 		}
 		
 		@Override
@@ -55,9 +53,7 @@ public final class TableModelAeropuerto extends DefaultTableModel {
 			case 0:
 				return aeropuerto.getIdAeropuerto();
 			case 1:
-				return aeropuerto.getNombre();
-			case 2:
-				return aeropuerto.getPosicion().toString();	
+				return aeropuerto.getNombre();				
 			default:
 				break;
 			}

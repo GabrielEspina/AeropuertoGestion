@@ -1,4 +1,4 @@
-package ar.edu.ub.p3.aeropuerto.gestion.view.abm.aeropuerto;
+package ar.edu.ub.p3.aeropuerto.gestion.view.abm.avion;
 
 
 import java.awt.BorderLayout;
@@ -11,7 +11,7 @@ import ar.edu.ub.p3.aeropuerto.gestion.view.ITablaModelo;
 import ar.edu.ub.p3.aeropuerto.modelo.*;
 import ar.edu.ub.p3.modelo.*;
 
-public class PanelFichaAeropuerto extends JPanel implements IFichaModelo<Aeropuerto> {
+public class PanelFichaAvion extends JPanel implements IFichaModelo<Aeropuerto> {
 
 	private ITablaModelo panelLista;
 	
@@ -19,15 +19,15 @@ public class PanelFichaAeropuerto extends JPanel implements IFichaModelo<Aeropue
 	
 	private IRepositorioModelo<Aeropuerto> aeropuertos;
 	
-	private PanelFichaCamposAeropuerto panelCampos;
-	private PanelFichaBotonesAeropuerto panelBotones;
+	private PanelFichaCamposAvion panelCampos;
+	private PanelFichaBotonesAvion panelBotones;
 	
 	
-	public PanelFichaAeropuerto( IRepositorioModelo<Aeropuerto> aeropuertos) {
+	public PanelFichaAvion( IRepositorioModelo<Aeropuerto> aeropuertos) {
 		
 		setAeropuertos ( aeropuertos );
-		setPanelCampos ( new PanelFichaCamposAeropuerto( getAeropuertos() ));
-		setPanelBotones( new PanelFichaBotonesAeropuerto( getAeropuertos() ));
+		setPanelCampos ( new PanelFichaCamposAvion( getAeropuertos() ));
+		setPanelBotones( new PanelFichaBotonesAvion( getAeropuertos() ));
 		
 		getPanelBotones().setPanelCampos( getPanelCampos() );
 		
@@ -63,19 +63,19 @@ public class PanelFichaAeropuerto extends JPanel implements IFichaModelo<Aeropue
 		this.aeropuertos = aeropuertos;
 	}
 
-	public PanelFichaCamposAeropuerto getPanelCampos() {
+	public PanelFichaCamposAvion getPanelCampos() {
 		return panelCampos;
 	}
 
-	public void setPanelCampos(PanelFichaCamposAeropuerto panelCampos) {
+	public void setPanelCampos(PanelFichaCamposAvion panelCampos) {
 		this.panelCampos = panelCampos;
 	}
 
-	public PanelFichaBotonesAeropuerto getPanelBotones() {
+	public PanelFichaBotonesAvion getPanelBotones() {
 		return panelBotones;
 	}
 
-	public void setPanelBotones(PanelFichaBotonesAeropuerto panelBotones) {
+	public void setPanelBotones(PanelFichaBotonesAvion panelBotones) {
 		this.panelBotones = panelBotones;
 	}
 

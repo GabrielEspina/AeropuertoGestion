@@ -8,18 +8,22 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
-import ar.edu.ub.p3.aeropuerto.modelo.Aeropuerto;
+import ar.edu.ub.p3.modelo.*;
 import ar.edu.ub.p3.aeropuerto.modelo.IRepositorioModelo;
 
 public class PanelFichaCamposAeropuerto extends JPanel{
 
 	private static final long serialVersionUID = 1L;
 	
-	private JTextField txtNombre;
-	private JTextField txtIdAeropuerto;
+	private JTextField 	txtNombre;
+	private JTextField 	txtIdAeropuerto;
+	private JTextField	txtPosicionX;
+	private JTextField	txtPosicionY;
 	
-	private JLabel lblIdAeropuerto;
-	private JLabel lblNombreAeropuerto;
+	private JLabel	lblIdAeropuerto;
+	private JLabel	lblNombreAeropuerto;
+	private JLabel	lblPosicionAeropuertoX;
+	private JLabel	lblPosicionAeropuertoY;
 	
 	public PanelFichaCamposAeropuerto( IRepositorioModelo<Aeropuerto> aeropuertos ) {
 		
@@ -32,31 +36,57 @@ public class PanelFichaCamposAeropuerto extends JPanel{
 		
 		setTxtIdAeropuerto( new JTextField() );
 		setTxtNombre( new JTextField() );
+		setTxtPosicionX( new JTextField());
+		setTxtPosicionY( new JTextField());
 		
-		setLblIdAeropuerto( new JLabel("        ID AEROPUERTO" ) );
-		setLblNombreAeropuerto( new JLabel("        NOMBRE AEROPUERTO") );
+		
+		setLblIdAeropuerto		 ( new JLabel("        ID Aeropuerto :" ) );
+		setLblNombreAeropuerto	 ( new JLabel("        Nombre Aeropuerto :") );
+		setLblPosicionAeropuertoX( new JLabel("        Posicion Aeropuerto X :") );
+		setLblPosicionAeropuertoY( new JLabel("        Posicion Aeropuerto Y :") );
+		
 		
 		add( getLblIdAeropuerto());
 		add( getTxtIdAeropuerto() );
 		
 		add( getLblNombreAeropuerto());
 		add( getTxtNombre() );
+		
+		add( getLblPosicionAeropuertoX());
+		add( getTxtPosicionX());
+		
+		
+		add( getLblPosicionAeropuertoY());
+		add( getTxtPosicionY());
+		
 	}
 
 	private void configurarVentana() {
 		
 		setBackground(Color.BLACK);
-		setLayout( new GridLayout( 3,2));
+		setLayout( new GridLayout( 4,1));
 
 		getLblIdAeropuerto().setForeground(Color.WHITE);
 		getLblNombreAeropuerto().setForeground(Color.WHITE);
 		
-		getTxtIdAeropuerto().setBackground(Color.BLACK);
+		getTxtIdAeropuerto().setBackground(Color.DARK_GRAY);
 		getTxtIdAeropuerto().setForeground(Color.WHITE);
 		
-		getTxtNombre().setBackground(Color.BLACK);
+		getTxtNombre().setBackground(Color.DARK_GRAY);
 		getTxtNombre().setForeground(Color.WHITE);
 		
+		getLblPosicionAeropuertoX().setBackground(Color.BLACK);
+		getLblPosicionAeropuertoY().setBackground(Color.BLACK);
+		
+		getLblPosicionAeropuertoX().setForeground(Color.WHITE);
+		getLblPosicionAeropuertoY().setForeground(Color.WHITE);
+		
+		
+		getTxtPosicionX().setBackground(Color.DARK_GRAY);
+		getTxtPosicionX().setForeground(Color.WHITE);
+		
+		getTxtPosicionY().setBackground(Color.DARK_GRAY);
+		getTxtPosicionY().setForeground(Color.WHITE);
 	}
 
 	public JTextField getTxtNombre() {
@@ -86,6 +116,38 @@ public class PanelFichaCamposAeropuerto extends JPanel{
 
 	public void setLblNombreAeropuerto(JLabel lblNombreAeropuerto) {
 		this.lblNombreAeropuerto = lblNombreAeropuerto;
+	}
+
+	public JLabel getLblPosicionAeropuertoX() {
+		return lblPosicionAeropuertoX;
+	}
+
+	public void setLblPosicionAeropuertoX(JLabel lblPosicionAeropuertoX) {
+		this.lblPosicionAeropuertoX = lblPosicionAeropuertoX;
+	}
+
+	public JLabel getLblPosicionAeropuertoY() {
+		return lblPosicionAeropuertoY;
+	}
+
+	public void setLblPosicionAeropuertoY(JLabel lblPosicionAeropuertoY) {
+		this.lblPosicionAeropuertoY = lblPosicionAeropuertoY;
+	}
+
+	public JTextField getTxtPosicionX() {
+		return txtPosicionX;
+	}
+
+	public void setTxtPosicionX(JTextField txtPosicionX) {
+		this.txtPosicionX = txtPosicionX;
+	}
+
+	public JTextField getTxtPosicionY() {
+		return txtPosicionY;
+	}
+
+	public void setTxtPosicionY(JTextField txtPosicionY) {
+		this.txtPosicionY = txtPosicionY;
 	}
 
 }

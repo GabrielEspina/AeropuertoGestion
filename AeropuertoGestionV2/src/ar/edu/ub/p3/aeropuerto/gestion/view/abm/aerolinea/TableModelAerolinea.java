@@ -1,4 +1,4 @@
-package ar.edu.ub.p3.aeropuerto.gestion.view.abm.aeropuerto;
+package ar.edu.ub.p3.aeropuerto.gestion.view.abm.aerolinea;
 
 
 import java.util.List;
@@ -7,15 +7,16 @@ import javax.swing.table.DefaultTableModel;
 
 import ar.edu.ub.p3.aeropuerto.modelo.*;
 import ar.edu.ub.p3.modelo.*;
-public final class TableModelAeropuerto extends DefaultTableModel {
+public final class TableModelAerolinea extends DefaultTableModel {
 				
 		/**
 		 * 
 		 */
 		private static final long serialVersionUID = 1L;
 		
-		private IRepositorioModelo<Aeropuerto> repositorio;
-		public TableModelAeropuerto( IRepositorioModelo<Aeropuerto> repositorio ) {
+		private IRepositorioModelo<Aerolinea> repositorio;
+		
+		public TableModelAerolinea( IRepositorioModelo<Aerolinea> repositorio ) {
 			this.setRepositorio(repositorio);
 		}
 				
@@ -23,11 +24,9 @@ public final class TableModelAeropuerto extends DefaultTableModel {
 		public String getColumnName(int column) {
 			switch (column) {
 			case 0:
-				return "idAeropuerto";
+				return "idAerolinea";
 			case 1:
-				return "Nombre";	
-			case 2:
-				return "Posicion";
+				return "Nombre";				
 			default:
 				break;
 			}
@@ -37,7 +36,7 @@ public final class TableModelAeropuerto extends DefaultTableModel {
 		@Override
 		public int getColumnCount() {
 			//TODO valor clavado con la cantidad de columnas a mostrar
-			return 3;
+			return 2;
 		}
 		
 		@Override
@@ -48,16 +47,14 @@ public final class TableModelAeropuerto extends DefaultTableModel {
 		@Override
 		public Object getValueAt(int row, int column) {	
 			
-			Aeropuerto aeropuerto = this.getAeropuertos().get(row);
+			Aerolinea aerolinea = this.getAeropuertos().get(row);
 			
 			switch (column) {
 			//TODO Agregar aca las columnas nuevas con el switch
 			case 0:
-				return aeropuerto.getIdAeropuerto();
+				return aerolinea.getIdAerolinea();
 			case 1:
-				return aeropuerto.getNombre();
-			case 2:
-				return aeropuerto.getPosicion().toString();	
+				return aerolinea.getNombre();				
 			default:
 				break;
 			}
@@ -66,15 +63,17 @@ public final class TableModelAeropuerto extends DefaultTableModel {
 		}
 
 
-		private List<Aeropuerto> getAeropuertos() {
+		private List<Aerolinea> getAeropuertos() {
 			return this.getRepositorio().getList();
 		}
 
-		private IRepositorioModelo<Aeropuerto> getRepositorio() {
+		public IRepositorioModelo<Aerolinea> getRepositorio() {
 			return repositorio;
 		}
 
-		private void setRepositorio(IRepositorioModelo<Aeropuerto> aeropuertos) {
-			this.repositorio = aeropuertos;
+		public void setRepositorio(IRepositorioModelo<Aerolinea> repositorio) {
+			this.repositorio = repositorio;
 		}
+
+
 	}
